@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Enxoval — Maria Isabel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+  :root{
+    --bg: #FBF6EE;
+    --card: #FFFFFF;
+    --ink: #2E2A24;
+    --ink-soft: #6B6558;
+    --sage: #6C7F5E;
+    --sage-deep: #3F4F39;
+    --sage-pale: #E4E9DB;
+    --gold: #B8862F;
+    --gold-pale: #F3E7C9;
+    --rose: #BD7E88;
+    --rose-deep: #8C4F5A;
+    --border: #E6E0D3;
+    --radius: 14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px 60px;}
+
+  header.hero{
+    background:var(--sage-deep);
+    background-image:radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size:14px 14px;
+    color:#F6F2E6;
+    padding:44px 20px 90px;
+    margin-bottom:-60px;
+    position:relative;
+  }
+  header.hero .inner{max-width:760px;margin:0 auto;}
+  .hero-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+  }
+  .monogram{
+    width:52px;
+    height:52px;
+    min-width:52px;
+    border-radius:50%;
+    background:var(--rose);
+    border:2px solid rgba(255,255,255,.3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:18px;
+    color:#fff;
+    letter-spacing:.01em;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#C9D6BE;
+    margin:0;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:42px;
+    margin:0 0 10px;
+    letter-spacing:-.01em;
+  }
+  h1 .rule{
+    display:block;
+    width:56px;
+    height:2px;
+    background:var(--gold);
+    border-radius:2px;
+    margin-top:14px;
+  }
+  .due-date{
+    font-size:15px;
+    color:#DCE5D2;
+    margin:0 0 26px;
+  }
+  .stamp{
+    display:inline-flex;
+    align-items:baseline;
+    gap:10px;
+    background:#F6F2E6;
+    color:var(--sage-deep);
+    padding:14px 20px;
+    border-radius:10px;
+    transform:rotate(-1.5deg);
+    box-shadow:0 6px 18px rgba(0,0,0,.18);
+  }
+  .stamp .num{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+    font-size:30px;
+  }
+  .stamp .label{
+    font-size:13px;
+    color:var(--sage);
+    max-width:150px;
+    line-height:1.3;
+  }
+
+  .progress-card{
+    background:var(--card);
+    border-radius:var(--radius);
+    border:1px solid var(--border);
+    padding:20px 24px;
+    box-shadow:0 10px 30px rgba(63,79,57,.10);
+    margin-bottom:28px;
+  }
+  .progress-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .progress-top span:first-child{font-size:13px;color:var(--ink-soft);}
+  #progress-pct{font-family:'JetBrains Mono', monospace;font-weight:600;font-size:15px;color:var(--sage-deep);}
+  .progress-track{height:8px;background:var(--sage-pale);border-radius:6px;overflow:hidden;}
+  .progress-fill{height:100%;background:var(--sage);width:0%;transition:width .3s ease;border-radius:6px;}
+  .save-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid #F1EDE2;
+  }
+  .save-btn{
+    font-family:'Inter', sans-serif;
+    font-size:12.5px;
+    font-weight:500;
+    color:var(--sage-deep);
+    background:var(--sage-pale);
+    border:1px solid var(--sage-pale);
+    border-radius:999px;
+    padding:7px 14px;
+    cursor:pointer;
+  }
+  .save-btn:hover{border-color:var(--sage);}
+  .save-btn-danger{background:transparent;color:#A34D4D;border-color:var(--border);}
+  .save-btn-danger:hover{border-color:#A34D4D;}
+  .drive-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid #F1EDE2;
+  }
+  .drive-input{
+    font-family:'Inter', sans-serif;
+    font-size:12.5px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:7px 10px;
+    flex:1;
+    min-width:180px;
+    color:var(--ink);
+  }
+  .drive-input:focus{outline:none;border-color:var(--sage);}
+  .drive-row a{color:var(--sage-deep);}
+  .save-status{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  nav.tabs{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    margin-bottom:26px;
+  }
+  nav.tabs button{
+    font-family:'Inter', sans-serif;
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:9px 16px;
+    cursor:pointer;
+  }
+  nav.tabs button.active{
+    background:var(--sage-deep);
+    color:#F6F2E6;
+    border-color:var(--sage-deep);
+  }
+
+  section.tab{display:none;}
+  section.tab.active{display:block;}
+
+  .group{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:20px 22px;
+    margin-bottom:16px;
+    box-shadow:0 4px 16px rgba(63,79,57,.05);
+  }
+  .group h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:19px;
+    margin:0 0 4px;
+    color:var(--sage-deep);
+  }
+  .group .sub{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 14px;
+  }
+  ul.check-list{list-style:none;margin:0;padding:0;}
+  ul.check-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:8px 0;
+    border-top:1px solid #F1EDE2;
+  }
+  ul.check-list li:first-child{border-top:none;}
+  ul.check-list input[type=checkbox]{
+    appearance:none;
+    -webkit-appearance:none;
+    width:19px;height:19px;
+    min-width:19px;
+    border:1.5px solid #C9C2AE;
+    border-radius:6px;
+    margin-top:2px;
+    cursor:pointer;
+    position:relative;
+    background:#fff;
+  }
+  ul.check-list input[type=checkbox]:checked{
+    background:var(--sage);
+    border-color:var(--sage);
+  }
+  ul.check-list input[type=checkbox]:checked::after{
+    content:"";
+    position:absolute;
+    left:6px;top:2px;
+    width:5px;height:10px;
+    border:solid white;
+    border-width:0 2px 2px 0;
+    transform:rotate(40deg);
+  }
+  ul.check-list label{
+    font-size:14.5px;
+    cursor:pointer;
+    padding-top:1px;
+  }
+  li.done label{
+    color:var(--ink-soft);
+    text-decoration:line-through;
+    text-decoration-color:#C9C2AE;
+  }
+
+  .note{
+    background:var(--gold-pale);
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:13.5px;
+    color:#6B4F14;
+    margin-top:6px;
+  }
+  .note strong{color:#4A3608;}
+
+  .inv-summary{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:16px;
+  }
+  .stat{
+    flex:1;
+    min-width:130px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:14px 12px;
+    text-align:center;
+  }
+  .stat-num{
+    display:block;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+    font-size:22px;
+    color:var(--sage-deep);
+  }
+  .stat-label{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  ul.inv-list{list-style:none;margin:0;padding:0;}
+  ul.inv-list li{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 0;
+    border-top:1px solid #F1EDE2;
+    flex-wrap:wrap;
+  }
+  ul.inv-list li:first-child{border-top:none;}
+  .inv-label{font-size:14.5px;}
+  .pill{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    font-weight:500;
+    padding:6px 12px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:#fff;
+    color:var(--ink-soft);
+    cursor:pointer;
+  }
+  .pill.active[data-state="cha"]{background:var(--gold);border-color:var(--gold);color:#fff;}
+
+  .inv-text{flex:1;min-width:150px;display:flex;flex-direction:column;}
+  .inv-text .qty{color:var(--ink-soft);font-weight:400;font-size:12.5px;margin-top:2px;}
+  .inv-item.complete .inv-label{color:var(--sage-deep);font-weight:500;}
+  .inv-item.complete .inv-label::before{content:"✓ ";color:var(--sage);}
+  .inv-item.cha-flag .inv-label{color:#8A6A1F;}
+  .qty-control{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+  .qty-input{
+    width:46px;
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:6px 4px;
+    background:#fff;
+    color:var(--ink);
+  }
+  .qty-input:focus{outline:none;border-color:var(--sage);}
+  .qty-input::-webkit-outer-spin-button,
+  .qty-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+  .qty-input{-moz-appearance:textfield;}
+  .qty-of{font-size:12px;color:var(--ink-soft);min-width:32px;}
+
+  ul.plain-list{
+    list-style:disc;
+    padding-left:20px;
+    margin:0;
+    font-size:14.5px;
+    line-height:1.9;
+    color:var(--ink);
+  }
+  ul.plain-list.cha-list{color:#8A6A1F;}
+  .empty-note{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    padding:30px 0 10px;
+  }
+
+  @media (max-width: 480px){
+    header.hero{padding:32px 16px 80px;}
+    h1{font-size:32px;}
+    .stamp{display:flex;}
+    nav.tabs button{font-size:12.5px;padding:8px 12px;}
+  }
+
+  @media print{
+    header.hero{background:#fff;background-image:none;color:var(--ink);}
+    .eyebrow{color:var(--ink-soft);}
+    .due-date{color:var(--ink-soft);}
+    .stamp{box-shadow:none;transform:none;background:var(--sage-pale);}
+    nav.tabs{display:none;}
+    section.tab{display:block !important;}
+    section.tab ~ section.tab{break-before:page;}
+    .group{box-shadow:none;break-inside:avoid;}
+    .progress-card{box-shadow:none;}
+    .save-row{display:none;}
+    .drive-row{display:none;}
+    footer{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <div class="hero-top">
+      <div class="monogram">MI</div>
+      <p class="eyebrow">Plano de enxoval</p>
+    </div>
+    <h1>Maria Isabel<span class="rule"></span></h1>
+    <p class="due-date">Chegada prevista para 29 de novembro de 2026</p>
+    <div class="stamp">
+      <span class="num" id="days-num">—</span>
+      <span class="label" id="days-label">calculando...</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="progress-card">
+    <div class="progress-top">
+      <span>Progresso geral do enxoval</span>
+      <span id="progress-pct">0%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="save-row">
+      <button type="button" class="save-btn" id="export-btn">Exportar dados</button>
+      <button type="button" class="save-btn" id="import-btn">Importar dados</button>
+      <button type="button" class="save-btn save-btn-danger" id="clear-btn">Limpar dados salvos</button>
+      <input type="file" id="import-file" accept="application/json" hidden>
+      <span class="save-status" id="save-status"></span>
+    </div>
+    <div class="drive-row" id="drive-setup">
+      <input type="text" class="drive-input" id="drive-client-id-input" placeholder="Cole aqui o Client ID do Google Cloud">
+      <button type="button" class="save-btn" id="drive-save-clientid-btn">Salvar</button>
+      <span class="save-status">Configuração única — <a href="#" id="drive-help-link">como conseguir isso</a></span>
+    </div>
+    <div class="drive-row" id="drive-connected-ui" style="display:none;">
+      <span class="save-status" id="drive-status">Google Drive: não conectado</span>
+      <button type="button" class="save-btn" id="drive-connect-btn">Conectar Google Drive</button>
+      <button type="button" class="save-btn save-btn-danger" id="drive-reset-btn">Trocar Client ID</button>
+    </div>
+  </div>
+
+  <nav class="tabs">
+    <button class="active" data-tab="cronograma">Cronograma</button>
+    <button data-tab="enxoval">Enxoval</button>
+    <button data-tab="lista-compras">Lista de compras</button>
+    <button data-tab="mala">Mala maternidade</button>
+    <button data-tab="documentos">Documentos</button>
+    <button data-tab="extras">Extras e chá</button>
+  </nav>
+
+  <section class="tab active" id="cronograma">
+    <div class="group">
+      <h2>Agora até final de agosto</h2>
+      <p class="sub">Organização geral e grandes compras</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="c1"><label for="c1">Preencher o inventário na aba Enxoval (o que já têm, falta ou vai no chá)</label></li>
+        <li><input type="checkbox" id="c2"><label for="c2">Definir e começar a montar o quarto do bebê</label></li>
+        <li><input type="checkbox" id="c3"><label for="c3">Pesquisar e escolher pediatra</label></li>
+        <li><input type="checkbox" id="c4"><label for="c4">Confirmar cobertura do plano de saúde e escolher maternidade</label></li>
+        <li><input type="checkbox" id="c5"><label for="c5">Decidir se vão fazer chá de bebê</label></li>
+        <li><input type="checkbox" id="c6"><label for="c6">Comprar bebê conforto e carrinho (testar modelos)</label></li>
+        <li><input type="checkbox" id="c7"><label for="c7">Iniciar contato com doula, se for o caso</label></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Setembro</h2>
+      <p class="sub">Organização fina</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="c8"><label for="c8">Lavar e organizar roupinhas por tamanho (RN, P, M)</label></li>
+        <li><input type="checkbox" id="c9"><label for="c9">Deixar o quarto montado definitivamente</label></li>
+        <li><input type="checkbox" id="c10"><label for="c10">Testar instalação do bebê conforto no carro</label></li>
+        <li><input type="checkbox" id="c11"><label for="c11">Curso para gestantes/parto, se desejarem</label></li>
+        <li><input type="checkbox" id="c12"><label for="c12">Chá de bebê, se decidido</label></li>
+        <li><input type="checkbox" id="c22"><label for="c22">Providenciar lembrancinhas para os convidados, se for fazer chá</label></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Outubro</h2>
+      <p class="sub">Últimos preparativos</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="c13"><label for="c13">Revisar checklist completo e comprar o que faltar</label></li>
+        <li><input type="checkbox" id="c14"><label for="c14">Conversar sobre plano de parto com o obstetra</label></li>
+        <li><input type="checkbox" id="c15"><label for="c15">Organizar documentos</label></li>
+        <li><input type="checkbox" id="c16"><label for="c16">Começar a separar a mala maternidade</label></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Novembro</h2>
+      <p class="sub">Reta final até 29/11</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="c17"><label for="c17">Mala maternidade 100% pronta (até ~1º de novembro)</label></li>
+        <li><input type="checkbox" id="c18"><label for="c18">Cadeirinha instalada e testada no carro</label></li>
+        <li><input type="checkbox" id="c19"><label for="c19">Trajeto até a maternidade e contatos de emergência definidos</label></li>
+        <li><input type="checkbox" id="c20"><label for="c20">Documentos e carteirinha do plano sempre à mão</label></li>
+        <li><input type="checkbox" id="c21"><label for="c21">Freezer com marmitas prontas</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tab" id="enxoval">
+<div class="inv-summary">
+      <div class="stat"><span class="stat-num" id="stat-have">0</span><span class="stat-label">peças que já têm</span></div>
+      <div class="stat"><span class="stat-num" id="stat-missing">0</span><span class="stat-label">peças faltando</span></div>
+      <div class="stat"><span class="stat-num" id="stat-complete">0/117</span><span class="stat-label">itens completos</span></div>
+      <div class="stat"><span class="stat-num" id="stat-cha">0</span><span class="stat-label">itens no chá</span></div>
+    </div>
+    <div class="group">
+      <h2>Quarto</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e1" data-target="1"><div class="inv-text"><span class="inv-label">Berço + colchão</span><span class="qty">sugestão: 1 conjunto</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Berço + colchão"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e2" data-target="2"><div class="inv-text"><span class="inv-label">Protetor de colchão impermeável</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Protetor de colchão impermeável"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e3" data-target="1"><div class="inv-text"><span class="inv-label">Protetor de berço ventilado</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Protetor de berço ventilado"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e4" data-target="3"><div class="inv-text"><span class="inv-label">Jogo de lençóis (mín. 3)</span><span class="qty">sugestão: 3 jogos</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Jogo de lençóis (mín. 3)"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e5" data-target="1"><div class="inv-text"><span class="inv-label">Trocador</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Trocador"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e6" data-target="3"><div class="inv-text"><span class="inv-label">Capas laváveis para o trocador</span><span class="qty">sugestão: 2 a 3 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Capas laváveis para o trocador"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e7" data-target="1"><div class="inv-text"><span class="inv-label">Cômoda / guarda-roupa</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Cômoda / guarda-roupa"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e8" data-target="1"><div class="inv-text"><span class="inv-label">Babá eletrônica com câmera</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Babá eletrônica com câmera"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e9" data-target="1"><div class="inv-text"><span class="inv-label">Termômetro de ambiente</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Termômetro de ambiente"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e10" data-target="1"><div class="inv-text"><span class="inv-label">Cortina blackout</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Cortina blackout"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e11" data-target="1"><div class="inv-text"><span class="inv-label">Umidificador / purificador de ar</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Umidificador / purificador de ar"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e12" data-target="1"><div class="inv-text"><span class="inv-label">Luminária de luz indireta</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Luminária de luz indireta"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e13" data-target="1"><div class="inv-text"><span class="inv-label">Móbile para o berço (opcional)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Móbile para o berço (opcional)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Sono</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e14" data-target="3"><div class="inv-text"><span class="inv-label">Mantas leves</span><span class="qty">sugestão: 2 a 3</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Mantas leves"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e15" data-target="1"><div class="inv-text"><span class="inv-label">Manta mais quentinha (ambientes com ar-condicionado)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Manta mais quentinha (ambientes com ar-condicionado)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e16" data-target="4"><div class="inv-text"><span class="inv-label">Cueiros (para enrolar o bebê)</span><span class="qty">sugestão: 3 a 4 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Cueiros (para enrolar o bebê)"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e17" data-target="3"><div class="inv-text"><span class="inv-label">Swaddle (embalagem prática para dormir, opcional)</span><span class="qty">sugestão: 2 a 3 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Swaddle (embalagem prática para dormir, opcional)"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e18" data-target="2"><div class="inv-text"><span class="inv-label">Saco de dormir (opcional)</span><span class="qty">sugestão: 2</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Saco de dormir (opcional)"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e19" data-target="1"><div class="inv-text"><span class="inv-label">Ninho (opcional — uso sempre supervisionado)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Ninho (opcional — uso sempre supervisionado)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+        <div class="group">
+      <h2>Roupas — RN</h2>
+      <p class="sub">Fase curta (2 a 4 semanas) — comprem pouco</p>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e20" data-target="3"><div class="inv-text"><span class="inv-label">Bodies manga curta</span><span class="qty">sugestão: 3 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga curta"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e21" data-target="2"><div class="inv-text"><span class="inv-label">Bodies manga longa</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga longa"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e22" data-target="2"><div class="inv-text"><span class="inv-label">Macacão com botões</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com botões"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e23" data-target="2"><div class="inv-text"><span class="inv-label">Macacão com zíper</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com zíper"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e24" data-target="2"><div class="inv-text"><span class="inv-label">Mijões / calças</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Mijões / calças"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e25" data-target="1"><div class="inv-text"><span class="inv-label">Casaquinhos</span><span class="qty">sugestão: 1 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Casaquinhos"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e26" data-target="2"><div class="inv-text"><span class="inv-label">Toucas</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Toucas"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e27" data-target="3"><div class="inv-text"><span class="inv-label">Meias e luvas</span><span class="qty">sugestão: 3 pares</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Meias e luvas"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e28" data-target="3"><div class="inv-text"><span class="inv-label">Babadores</span><span class="qty">sugestão: 3 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Babadores"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e29" data-target="3"><div class="inv-text"><span class="inv-label">Trocas de roupa maternidade</span><span class="qty">sugestão: 3 conjuntos completos (com meia, luva e touca)</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Trocas de roupa maternidade"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Roupas — 0 a 3 meses</h2>
+      <p class="sub">Fase mais longa — vale investir mais aqui</p>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e30" data-target="6"><div class="inv-text"><span class="inv-label">Bodies manga curta</span><span class="qty">sugestão: 6 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga curta"><span class="qty-of">de 6</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e31" data-target="5"><div class="inv-text"><span class="inv-label">Bodies manga longa</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga longa"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e32" data-target="5"><div class="inv-text"><span class="inv-label">Macacão com botões</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com botões"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e33" data-target="5"><div class="inv-text"><span class="inv-label">Macacão com zíper</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com zíper"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e34" data-target="6"><div class="inv-text"><span class="inv-label">Mijões / calças</span><span class="qty">sugestão: 6 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Mijões / calças"><span class="qty-of">de 6</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e35" data-target="3"><div class="inv-text"><span class="inv-label">Casaquinhos</span><span class="qty">sugestão: 3 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Casaquinhos"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e36" data-target="2"><div class="inv-text"><span class="inv-label">Toucas</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Toucas"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e37" data-target="5"><div class="inv-text"><span class="inv-label">Meias e luvas</span><span class="qty">sugestão: 5 pares</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Meias e luvas"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e38" data-target="6"><div class="inv-text"><span class="inv-label">Babadores</span><span class="qty">sugestão: 6 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Babadores"><span class="qty-of">de 6</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Roupas — 3 a 6 meses</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e39" data-target="6"><div class="inv-text"><span class="inv-label">Bodies manga curta</span><span class="qty">sugestão: 6 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga curta"><span class="qty-of">de 6</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e40" data-target="5"><div class="inv-text"><span class="inv-label">Bodies manga longa</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga longa"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e41" data-target="5"><div class="inv-text"><span class="inv-label">Macacão com botões</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com botões"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e42" data-target="5"><div class="inv-text"><span class="inv-label">Macacão com zíper</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com zíper"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e43" data-target="6"><div class="inv-text"><span class="inv-label">Mijões / calças</span><span class="qty">sugestão: 6 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Mijões / calças"><span class="qty-of">de 6</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e44" data-target="3"><div class="inv-text"><span class="inv-label">Casaquinhos</span><span class="qty">sugestão: 3 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Casaquinhos"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e45" data-target="1"><div class="inv-text"><span class="inv-label">Toucas</span><span class="qty">sugestão: 1 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Toucas"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e46" data-target="4"><div class="inv-text"><span class="inv-label">Meias e luvas</span><span class="qty">sugestão: 4 pares</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Meias e luvas"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e47" data-target="6"><div class="inv-text"><span class="inv-label">Babadores</span><span class="qty">sugestão: 6 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Babadores"><span class="qty-of">de 6</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Roupas — 6 a 9 meses</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e48" data-target="5"><div class="inv-text"><span class="inv-label">Bodies manga curta</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga curta"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e49" data-target="4"><div class="inv-text"><span class="inv-label">Bodies manga longa</span><span class="qty">sugestão: 4 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga longa"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e50" data-target="4"><div class="inv-text"><span class="inv-label">Macacão com botões</span><span class="qty">sugestão: 4 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com botões"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e51" data-target="4"><div class="inv-text"><span class="inv-label">Macacão com zíper</span><span class="qty">sugestão: 4 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com zíper"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e52" data-target="5"><div class="inv-text"><span class="inv-label">Mijões / calças</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Mijões / calças"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e53" data-target="2"><div class="inv-text"><span class="inv-label">Casaquinhos</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Casaquinhos"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e54" data-target="1"><div class="inv-text"><span class="inv-label">Toucas</span><span class="qty">sugestão: 1 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Toucas"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e55" data-target="4"><div class="inv-text"><span class="inv-label">Meias e luvas</span><span class="qty">sugestão: 4 pares</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Meias e luvas"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e56" data-target="5"><div class="inv-text"><span class="inv-label">Babadores</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Babadores"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Roupas — 9 a 12 meses</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e57" data-target="5"><div class="inv-text"><span class="inv-label">Bodies manga curta</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga curta"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e58" data-target="4"><div class="inv-text"><span class="inv-label">Bodies manga longa</span><span class="qty">sugestão: 4 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bodies manga longa"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e59" data-target="4"><div class="inv-text"><span class="inv-label">Macacão com botões</span><span class="qty">sugestão: 4 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com botões"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e60" data-target="4"><div class="inv-text"><span class="inv-label">Macacão com zíper</span><span class="qty">sugestão: 4 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Macacão com zíper"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e61" data-target="5"><div class="inv-text"><span class="inv-label">Mijões / calças</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Mijões / calças"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e62" data-target="2"><div class="inv-text"><span class="inv-label">Casaquinhos</span><span class="qty">sugestão: 2 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Casaquinhos"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e63" data-target="1"><div class="inv-text"><span class="inv-label">Toucas</span><span class="qty">sugestão: 1 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Toucas"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e64" data-target="3"><div class="inv-text"><span class="inv-label">Meias e luvas</span><span class="qty">sugestão: 3 pares</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Meias e luvas"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e65" data-target="5"><div class="inv-text"><span class="inv-label">Babadores</span><span class="qty">sugestão: 5 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Babadores"><span class="qty-of">de 5</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Banho e higiene</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e66" data-target="1"><div class="inv-text"><span class="inv-label">Banheira</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Banheira"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e67" data-target="1"><div class="inv-text"><span class="inv-label">Suporte para banheira (opcional)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Suporte para banheira (opcional)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e68" data-target="1"><div class="inv-text"><span class="inv-label">Redutor de banheira (opcional)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Redutor de banheira (opcional)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e69" data-target="1"><div class="inv-text"><span class="inv-label">Termômetro de banho (opcional)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Termômetro de banho (opcional)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e70" data-target="4"><div class="inv-text"><span class="inv-label">Toalhas com capuz</span><span class="qty">sugestão: 3 a 4</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Toalhas com capuz"><span class="qty-of">de 4</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e71" data-target="1"><div class="inv-text"><span class="inv-label">Sabonete e shampoo neutros</span><span class="qty">sugestão: 1 de cada (repor conforme uso)</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Sabonete e shampoo neutros"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e72" data-target="1"><div class="inv-text"><span class="inv-label">Escova/pente macio</span><span class="qty">sugestão: 1 kit</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Escova/pente macio"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e73" data-target="1"><div class="inv-text"><span class="inv-label">Cortador de unha infantil</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Cortador de unha infantil"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e74" data-target="2"><div class="inv-text"><span class="inv-label">Pomada para assaduras</span><span class="qty">sugestão: 1 a 2</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Pomada para assaduras"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e75" data-target="2"><div class="inv-text"><span class="inv-label">Fraldas RN e P (estoque inicial)</span><span class="qty">sugestão: 1 pacote de cada (~80 un.)</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Fraldas RN e P (estoque inicial)"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e76" data-target="3"><div class="inv-text"><span class="inv-label">Lenços umedecidos</span><span class="qty">sugestão: 2 a 3 pacotes</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Lenços umedecidos"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e77" data-target="1"><div class="inv-text"><span class="inv-label">Álcool 70% e gaze (coto umbilical)</span><span class="qty">sugestão: 1 kit</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Álcool 70% e gaze (coto umbilical)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e78" data-target="1"><div class="inv-text"><span class="inv-label">Kit organizador de higiene (molhadeira, porta-algodão, porta-cotonete)</span><span class="qty">sugestão: 1 kit</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Kit organizador de higiene (molhadeira, porta-algodão, porta-cotonete)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e79" data-target="1"><div class="inv-text"><span class="inv-label">Algodão em bolinha</span><span class="qty">sugestão: 1 pacote</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Algodão em bolinha"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e80" data-target="1"><div class="inv-text"><span class="inv-label">Hastes flexíveis (cotonetes)</span><span class="qty">sugestão: 1 pacote</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Hastes flexíveis (cotonetes)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e81" data-target="1"><div class="inv-text"><span class="inv-label">Hidratante corporal (sem perfume)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Hidratante corporal (sem perfume)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e82" data-target="8"><div class="inv-text"><span class="inv-label">Fraldas de boca (paninhos para babar)</span><span class="qty">sugestão: 6 a 8 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Fraldas de boca (paninhos para babar)"><span class="qty-of">de 8</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e83" data-target="6"><div class="inv-text"><span class="inv-label">Fraldas de ombro (para arrotar)</span><span class="qty">sugestão: 4 a 6 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Fraldas de ombro (para arrotar)"><span class="qty-of">de 6</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e84" data-target="1"><div class="inv-text"><span class="inv-label">Lixeira com tampa (para fraldas)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Lixeira com tampa (para fraldas)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Alimentação e amamentação</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e85" data-target="1"><div class="inv-text"><span class="inv-label">Almofada de amamentação</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Almofada de amamentação"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e86" data-target="2"><div class="inv-text"><span class="inv-label">Protetor de mamilo de silicone</span><span class="qty">sugestão: 2 pares</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Protetor de mamilo de silicone"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e87" data-target="1"><div class="inv-text"><span class="inv-label">Conchas coletoras de leite (opcional)</span><span class="qty">sugestão: 1 par</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Conchas coletoras de leite (opcional)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e88" data-target="1"><div class="inv-text"><span class="inv-label">Absorventes para os seios</span><span class="qty">sugestão: 1 caixa</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Absorventes para os seios"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e89" data-target="1"><div class="inv-text"><span class="inv-label">Pomada de lanolina</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Pomada de lanolina"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e90" data-target="1"><div class="inv-text"><span class="inv-label">Bomba tira-leite</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bomba tira-leite"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e91" data-target="1"><div class="inv-text"><span class="inv-label">Sacos para armazenamento de leite</span><span class="qty">sugestão: 1 caixa</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Sacos para armazenamento de leite"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e92" data-target="3"><div class="inv-text"><span class="inv-label">Mamadeiras (se for complementar)</span><span class="qty">sugestão: 2 a 3</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Mamadeiras (se for complementar)"><span class="qty-of">de 3</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e93" data-target="1"><div class="inv-text"><span class="inv-label">Escova para mamadeiras</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Escova para mamadeiras"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e94" data-target="1"><div class="inv-text"><span class="inv-label">Esterilizador</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Esterilizador"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e95" data-target="2"><div class="inv-text"><span class="inv-label">Chupetas (caso pretenda usar)</span><span class="qty">sugestão: 2</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Chupetas (caso pretenda usar)"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e96" data-target="1"><div class="inv-text"><span class="inv-label">Porta-leite em pó (opcional)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Porta-leite em pó (opcional)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e97" data-target="1"><div class="inv-text"><span class="inv-label">Poltrona de amamentação</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Poltrona de amamentação"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Passeio e transporte</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e98" data-target="1"><div class="inv-text"><span class="inv-label">Bebê conforto (0–13kg)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bebê conforto (0–13kg)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e99" data-target="1"><div class="inv-text"><span class="inv-label">Base Isofix (se o veículo tiver)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Base Isofix (se o veículo tiver)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e100" data-target="1"><div class="inv-text"><span class="inv-label">Carrinho de bebê</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Carrinho de bebê"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e101" data-target="1"><div class="inv-text"><span class="inv-label">Sling / canguru ergonômico</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Sling / canguru ergonômico"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e102" data-target="1"><div class="inv-text"><span class="inv-label">Bolsa maternidade</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Bolsa maternidade"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e103" data-target="1"><div class="inv-text"><span class="inv-label">Trocador portátil</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Trocador portátil"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e104" data-target="1"><div class="inv-text"><span class="inv-label">Protetor solar para o vidro do carro</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Protetor solar para o vidro do carro"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Saúde e farmacinha</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e105" data-target="1"><div class="inv-text"><span class="inv-label">Termômetro digital</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Termômetro digital"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e106" data-target="1"><div class="inv-text"><span class="inv-label">Aspirador nasal</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Aspirador nasal"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e107" data-target="1"><div class="inv-text"><span class="inv-label">Seringa para lavagem nasal</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Seringa para lavagem nasal"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e108" data-target="1"><div class="inv-text"><span class="inv-label">Soro fisiológico</span><span class="qty">sugestão: 1 caixa</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Soro fisiológico"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e109" data-target="2"><div class="inv-text"><span class="inv-label">Seringas de 5 e 10 mL</span><span class="qty">sugestão: 1 de cada</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Seringas de 5 e 10 mL"><span class="qty-of">de 2</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e110" data-target="1"><div class="inv-text"><span class="inv-label">Curativos</span><span class="qty">sugestão: 1 caixa</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Curativos"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e111" data-target="1"><div class="inv-text"><span class="inv-label">Antisséptico para o umbigo (somente se indicado pelo pediatra)</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Antisséptico para o umbigo (somente se indicado pelo pediatra)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e112" data-target="1"><div class="inv-text"><span class="inv-label">Kit de primeiros socorros básico</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Kit de primeiros socorros básico"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Lavanderia e organização</h2>
+      <ul class="inv-list">
+        <li class="inv-item" id="inv-e113" data-target="1"><div class="inv-text"><span class="inv-label">Sabão líquido para roupas de bebê</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Sabão líquido para roupas de bebê"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e114" data-target="1"><div class="inv-text"><span class="inv-label">Cesto de roupas</span><span class="qty">sugestão: 1</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Cesto de roupas"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e115" data-target="1"><div class="inv-text"><span class="inv-label">Saquinhos para roupas delicadas</span><span class="qty">sugestão: 2 a 3</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Saquinhos para roupas delicadas"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e116" data-target="1"><div class="inv-text"><span class="inv-label">Organizadores de gaveta (colmeias)</span><span class="qty">sugestão: 1 kit</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Organizadores de gaveta (colmeias)"><span class="qty-of">de 1</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+        <li class="inv-item" id="inv-e117" data-target="30"><div class="inv-text"><span class="inv-label">Cabides infantis</span><span class="qty">sugestão: 30 a 40 un.</span></div><div class="qty-control"><input type="number" class="qty-input" min="0" step="1" value="0" aria-label="Quantidade que já têm de Cabides infantis"><span class="qty-of">de 30</span><button type="button" class="pill cha-pill" data-state="cha" aria-pressed="false">No chá</button></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tab" id="lista-compras">
+    <div id="shopping-list-content"></div>
+  </section>
+
+  <section class="tab" id="mala">
+    <div class="group">
+      <h2>Mãe</h2>
+      <p class="sub">Deixem pronta até ~36 semanas (por volta de 1º de novembro)</p>
+      <p class="sub">Documentos</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="m1"><label for="m1">RG ou outro documento com foto</label></li>
+        <li><input type="checkbox" id="m2"><label for="m2">Cartão do plano de saúde</label></li>
+        <li><input type="checkbox" id="m3"><label for="m3">Carteirinha do pré-natal</label></li>
+        <li><input type="checkbox" id="m4"><label for="m4">Cartão de vacinação, se a maternidade pedir</label></li>
+      </ul>
+      <p class="sub" style="margin-top:16px;">Vestuário</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="m5"><label for="m5">Camisolas ou pijamas com abertura para amamentação (2 a 3)</label></li>
+        <li><input type="checkbox" id="m6"><label for="m6">Robe/roupão</label></li>
+        <li><input type="checkbox" id="m7"><label for="m7">Chinelos</label></li>
+        <li><input type="checkbox" id="m8"><label for="m8">Sandália de banho antiderrapante</label></li>
+        <li><input type="checkbox" id="m9"><label for="m9">Meias</label></li>
+        <li><input type="checkbox" id="m10"><label for="m10">Calcinhas confortáveis ou descartáveis (várias)</label></li>
+        <li><input type="checkbox" id="m11"><label for="m11">Sutiãs para amamentação (2)</label></li>
+        <li><input type="checkbox" id="m12"><label for="m12">Roupa confortável para a saída da maternidade</label></li>
+      </ul>
+      <p class="sub" style="margin-top:16px;">Higiene pessoal</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="m13"><label for="m13">Escova e pasta de dente</label></li>
+        <li><input type="checkbox" id="m14"><label for="m14">Shampoo e condicionador</label></li>
+        <li><input type="checkbox" id="m15"><label for="m15">Sabonete líquido</label></li>
+        <li><input type="checkbox" id="m16"><label for="m16">Desodorante</label></li>
+        <li><input type="checkbox" id="m17"><label for="m17">Escova ou pente de cabelo</label></li>
+        <li><input type="checkbox" id="m18"><label for="m18">Absorventes pós-parto (noturnos)</label></li>
+        <li><input type="checkbox" id="m19"><label for="m19">Hidratante labial</label></li>
+        <li><input type="checkbox" id="m20"><label for="m20">Elástico/presilha de cabelo</label></li>
+        <li><input type="checkbox" id="m21"><label for="m21">Creme para os mamilos (lanolina), se for amamentar</label></li>
+      </ul>
+      <p class="sub" style="margin-top:16px;">Eletrônicos e conforto</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="m22"><label for="m22">Celular e carregador (cabo longo ajuda)</label></li>
+        <li><input type="checkbox" id="m23"><label for="m23">Fones de ouvido</label></li>
+        <li><input type="checkbox" id="m24"><label for="m24">Máscara de dormir e protetor auricular (quarto compartilhado)</label></li>
+        <li><input type="checkbox" id="m25"><label for="m25">Travesseiro de amamentação, se preferir o próprio</label></li>
+        <li><input type="checkbox" id="m26"><label for="m26">Snacks leves e água</label></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Bebê</h2>
+      <p class="sub">Vestuário</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="m27"><label for="m27">Bodies, macacões, toucas, luvas, meias (2 a 3 mudas)</label></li>
+        <li><input type="checkbox" id="m28"><label for="m28">Manta</label></li>
+        <li><input type="checkbox" id="m29"><label for="m29">Saída de maternidade completa (body, casaco, touca)</label></li>
+      </ul>
+      <p class="sub" style="margin-top:16px;">Higiene</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="m30"><label for="m30">Fraldas RN</label></li>
+        <li><input type="checkbox" id="m31"><label for="m31">Lenços umedecidos</label></li>
+        <li><input type="checkbox" id="m32"><label for="m32">Pomada para assaduras (tubo pequeno)</label></li>
+        <li><input type="checkbox" id="m33"><label for="m33">Álcool 70% e gaze para o coto umbilical</label></li>
+      </ul>
+      <p class="sub" style="margin-top:16px;">Outros</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="m34"><label for="m34">Toalha de banho com capuz</label></li>
+        <li><input type="checkbox" id="m35"><label for="m35">Chupeta, se for usar</label></li>
+        <li><input type="checkbox" id="m36"><label for="m36">Sacos plásticos para roupas sujas</label></li>
+        <li><input type="checkbox" id="m43"><label for="m43">Enfeite para porta do quarto na maternidade (opcional)</label></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h2>Acompanhante</h2>
+      <ul class="check-list">
+        <li><input type="checkbox" id="m37"><label for="m37">Muda de roupa confortável</label></li>
+        <li><input type="checkbox" id="m38"><label for="m38">Itens de higiene pessoal (escova de dente, desodorante etc.)</label></li>
+        <li><input type="checkbox" id="m39"><label for="m39">Carregador de celular</label></li>
+        <li><input type="checkbox" id="m40"><label for="m40">Documento de identificação</label></li>
+        <li><input type="checkbox" id="m41"><label for="m41">Lanches e água</label></li>
+        <li><input type="checkbox" id="m42"><label for="m42">Travesseiro pequeno para dormir na cadeira/poltrona</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tab" id="documentos">
+    <div class="group">
+      <h2>Documentação e burocracia</h2>
+      <ul class="check-list">
+        <li><input type="checkbox" id="d1"><label for="d1">Plano de saúde: confirmar cobertura do parto e inclusão do bebê</label></li>
+        <li><input type="checkbox" id="d2"><label for="d2">Fazer pré-cadastro na maternidade</label></li>
+        <li><input type="checkbox" id="d3"><label for="d3">Pediatra escolhido e primeira consulta agendada</label></li>
+        <li><input type="checkbox" id="d4"><label for="d4">Declaração de Nascido Vivo (emitida pela maternidade)</label></li>
+        <li><input type="checkbox" id="d5"><label for="d5">Registro civil em cartório (prazo: até 15 dias após o nascimento)</label></li>
+        <li><input type="checkbox" id="d6"><label for="d6">Licença-maternidade: providenciar com o RH/INSS</label></li>
+        <li><input type="checkbox" id="d7"><label for="d7">Plano de parto conversado com o obstetra</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tab" id="extras">
+    <div class="group">
+      <h2>Itens opcionais de conforto</h2>
+      <p class="sub">Não são essenciais, mas facilitam bastante o dia a dia</p>
+      <ul class="check-list">
+        <li><input type="checkbox" id="x1"><label for="x1">Aquecedor de lenços umedecidos (dispensável em clima quente)</label></li>
+        <li><input type="checkbox" id="x2"><label for="x2">Máquina de ruído branco</label></li>
+        <li><input type="checkbox" id="x3"><label for="x3">Cadeira de descanso (baby rocker)</label></li>
+        <li><input type="checkbox" id="x4"><label for="x4">Tapete de atividades</label></li>
+        <li><input type="checkbox" id="x5"><label for="x5">Ginásio de atividades</label></li>
+        <li><input type="checkbox" id="x6"><label for="x6">Cercadinho</label></li>
+        <li><input type="checkbox" id="x7"><label for="x7">Berço portátil para viagens</label></li>
+        <li><input type="checkbox" id="x8"><label for="x8">Contratar doula</label></li>
+        <li><input type="checkbox" id="x9"><label for="x9">Marmitas congeladas ou serviço de refeições pós-parto</label></li>
+      </ul>
+      <div class="note">
+        <strong>Sobre o chá de bebê:</strong> como ainda está em aberto, já dá pra marcar na aba Enxoval, item por item, o que preferem receber de presente — é só clicar em "No chá". Esses itens aparecem separados na Lista de compras, então nada se perde se decidirem fazer o chá mais adiante. Se decidirem, o período ideal para organizá-lo é entre setembro e outubro.
+      </div>
+    </div>
+  </section>
+
+  <footer>Nas abas de tarefas, marquem os checkboxes conforme forem concluindo. Na aba Enxoval, digitem quantas peças já têm de cada item (e marquem "No chá" se o restante depende do presente). Agora tudo é salvo automaticamente neste navegador, neste computador — podem fechar e abrir a página de novo que o progresso continua lá. Ainda assim, de vez em quando cliquem em "Exportar dados" e guardem o arquivo em outro lugar (Google Drive, pen drive) como backup, caso algo aconteça com o computador. Para restaurar em outro aparelho, abram este mesmo HTML lá e cliquem em "Importar dados".</footer>
+</div>
+
+<script>
+  function updateCountdown(){
+    const dueDate = new Date('2026-11-29T00:00:00');
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const diffDays = Math.ceil((dueDate - today) / (1000*60*60*24));
+    const numEl = document.getElementById('days-num');
+    const labelEl = document.getElementById('days-label');
+    if(diffDays > 0){
+      const weeks = Math.round(diffDays/7);
+      numEl.textContent = diffDays;
+      labelEl.textContent = 'dias até conhecê-la (~' + weeks + ' semanas)';
+    } else if(diffDays === 0){
+      numEl.textContent = '🎉';
+      labelEl.textContent = 'é hoje! boa sorte, mamãe';
+    } else {
+      numEl.textContent = Math.abs(diffDays);
+      labelEl.textContent = 'dias desde que ela chegou';
+    }
+  }
+  updateCountdown();
+
+  const tabButtons = document.querySelectorAll('nav.tabs button');
+  const tabSections = document.querySelectorAll('section.tab');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      tabSections.forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  const checkboxes = document.querySelectorAll('input[type=checkbox]');
+  const invItems = document.querySelectorAll('.inv-item');
+  const progressFill = document.getElementById('progress-fill');
+  const progressPct = document.getElementById('progress-pct');
+
+  function getItemData(item){
+    const target = parseInt(item.dataset.target) || 0;
+    const input = item.querySelector('.qty-input');
+    const have = Math.max(0, parseInt(input.value) || 0);
+    const missing = Math.max(target - have, 0);
+    const cha = item.querySelector('.cha-pill').classList.contains('active');
+    return {target, have, missing, cha};
+  }
+
+  function updateProgress(){
+    const totalChecks = checkboxes.length;
+    const checkedCount = document.querySelectorAll('input[type=checkbox]:checked').length;
+    let resolvedInv = 0;
+    invItems.forEach(item => {
+      const {missing} = getItemData(item);
+      if(missing === 0) resolvedInv++;
+    });
+    const total = totalChecks + invItems.length;
+    const done = checkedCount + resolvedInv;
+    const pct = total ? Math.round((done/total)*100) : 0;
+    progressFill.style.width = pct + '%';
+    progressPct.textContent = pct + '%';
+  }
+
+  const STORAGE_KEY = 'enxoval-maria-isabel-v1';
+
+  function saveToLocalStorage(){
+    try{
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(collectState()));
+      const time = new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'});
+      showStatus('Salvo automaticamente neste navegador às ' + time + '.');
+      return true;
+    }catch(err){
+      showStatus('Não consegui salvar automaticamente neste navegador. Usem "Exportar dados" para não perder o progresso.');
+      return false;
+    }
+  }
+
+  function loadFromLocalStorage(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return false;
+      applyState(JSON.parse(raw));
+      showStatus('Progresso restaurado automaticamente deste navegador.');
+      return true;
+    }catch(err){
+      return false;
+    }
+  }
+
+  // ---------- Google Drive ----------
+  const DRIVE_CLIENT_ID_KEY = 'google-client-id';
+  const DRIVE_FILE_NAME = 'enxoval-maria-isabel-state.json';
+  const DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.appdata';
+
+  let tokenClient = null;
+  let driveAccessToken = null;
+  let driveFileId = null;
+  let driveSaveTimer = null;
+  let pendingAfterAuth = null;
+
+  function waitForGoogle(cb, attempts){
+    attempts = attempts || 0;
+    if(window.google && window.google.accounts && window.google.accounts.oauth2){
+      cb();
+    }else if(attempts < 100){
+      setTimeout(() => waitForGoogle(cb, attempts + 1), 100);
+    }else{
+      setDriveStatus('Não consegui carregar a biblioteca do Google. Verifiquem a conexão com a internet e recarreguem a página.');
+    }
+  }
+
+  function getClientId(){
+    try{ return localStorage.getItem(DRIVE_CLIENT_ID_KEY) || ''; }catch(e){ return ''; }
+  }
+
+  function setDriveStatus(msg){
+    const el = document.getElementById('drive-status');
+    if(el) el.textContent = msg;
+  }
+
+  function initDriveUI(){
+    const clientId = getClientId();
+    const setupEl = document.getElementById('drive-setup');
+    const connectedEl = document.getElementById('drive-connected-ui');
+    if(!clientId){
+      setupEl.style.display = 'flex';
+      connectedEl.style.display = 'none';
+      return;
+    }
+    setupEl.style.display = 'none';
+    connectedEl.style.display = 'flex';
+    waitForGoogle(() => {
+      setupTokenClient(clientId);
+      attemptSilentAuth();
+    });
+  }
+
+  function setupTokenClient(clientId){
+    tokenClient = window.google.accounts.oauth2.initTokenClient({
+      client_id: clientId,
+      scope: DRIVE_SCOPE,
+      callback: (response) => {
+        if(response && response.access_token){
+          driveAccessToken = response.access_token;
+          if(pendingAfterAuth){
+            const fn = pendingAfterAuth;
+            pendingAfterAuth = null;
+            fn();
+          }else{
+            loadFromDrive();
+          }
+        }else{
+          pendingAfterAuth = null;
+          setDriveStatus('Google Drive: não conectado — cliquem em "Conectar Google Drive"');
+        }
+      }
+    });
+  }
+
+  function attemptSilentAuth(){
+    if(!tokenClient) return;
+    setDriveStatus('Conectando ao Google Drive…');
+    tokenClient.requestAccessToken({prompt: 'none'});
+  }
+
+  function reauthAndRetry(fn){
+    if(!tokenClient) return;
+    pendingAfterAuth = fn;
+    tokenClient.requestAccessToken({prompt: 'none'});
+  }
+
+  async function driveApiFetch(url, options){
+    options = options || {};
+    options.headers = Object.assign({}, options.headers, {Authorization: 'Bearer ' + driveAccessToken});
+    const res = await fetch(url, options);
+    if(res.status === 401){
+      const err = new Error('token expirado');
+      err.code = 401;
+      throw err;
+    }
+    if(!res.ok){
+      const err = new Error('erro na API do Drive: ' + res.status);
+      err.code = res.status;
+      throw err;
+    }
+    return res;
+  }
+
+  async function driveFindFileId(){
+    const q = encodeURIComponent("name='" + DRIVE_FILE_NAME + "'");
+    const url = 'https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=' + q + '&fields=files(id,name)';
+    const res = await driveApiFetch(url);
+    const data = await res.json();
+    return (data.files && data.files.length) ? data.files[0].id : null;
+  }
+
+  async function driveReadFile(fileId){
+    const url = 'https://www.googleapis.com/drive/v3/files/' + fileId + '?alt=media';
+    const res = await driveApiFetch(url);
+    return res.json();
+  }
+
+  async function driveCreateFile(content){
+    const metadata = {name: DRIVE_FILE_NAME, parents: ['appDataFolder']};
+    const boundary = 'enxoval-boundary-' + Date.now();
+    const body =
+      '--' + boundary + '\r\n' +
+      'Content-Type: application/json; charset=UTF-8\r\n\r\n' +
+      JSON.stringify(metadata) + '\r\n' +
+      '--' + boundary + '\r\n' +
+      'Content-Type: application/json\r\n\r\n' +
+      JSON.stringify(content) + '\r\n' +
+      '--' + boundary + '--';
+    const res = await driveApiFetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id', {
+      method: 'POST',
+      headers: {'Content-Type': 'multipart/related; boundary=' + boundary},
+      body: body
+    });
+    const data = await res.json();
+    return data.id;
+  }
+
+  async function driveUpdateFile(fileId, content){
+    await driveApiFetch('https://www.googleapis.com/upload/drive/v3/files/' + fileId + '?uploadType=media', {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(content)
+    });
+  }
+
+  async function loadFromDrive(){
+    try{
+      setDriveStatus('Carregando do Google Drive…');
+      driveFileId = await driveFindFileId();
+      if(driveFileId){
+        const state = await driveReadFile(driveFileId);
+        applyState(state);
+        saveToLocalStorage();
+        setDriveStatus('Google Drive: conectado ✓ · dados carregados');
+      }else{
+        setDriveStatus('Google Drive: conectado ✓ · nada salvo ainda por lá');
+        saveToDriveNow();
+      }
+    }catch(err){
+      if(err && err.code === 401){
+        reauthAndRetry(loadFromDrive);
+      }else{
+        setDriveStatus('Conectado, mas não consegui carregar os dados do Drive agora.');
+      }
+    }
+  }
+
+  function scheduleDriveSave(){
+    if(!driveAccessToken) return;
+    clearTimeout(driveSaveTimer);
+    driveSaveTimer = setTimeout(() => saveToDriveNow(), 1500);
+  }
+
+  async function saveToDriveNow(isRetry){
+    if(!driveAccessToken) return;
+    try{
+      setDriveStatus('Salvando no Drive…');
+      const state = collectState();
+      if(!driveFileId){
+        driveFileId = await driveFindFileId();
+      }
+      if(driveFileId){
+        await driveUpdateFile(driveFileId, state);
+      }else{
+        driveFileId = await driveCreateFile(state);
+      }
+      const time = new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'});
+      setDriveStatus('Google Drive: conectado ✓ · salvo às ' + time);
+    }catch(err){
+      if(err && err.code === 401 && !isRetry){
+        reauthAndRetry(() => saveToDriveNow(true));
+      }else{
+        setDriveStatus('Não consegui salvar no Drive agora. Continua salvo neste navegador.');
+      }
+    }
+  }
+  // ---------- fim Google Drive ----------
+
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('li').classList.toggle('done', cb.checked);
+      updateProgress();
+      saveToLocalStorage();
+      scheduleDriveSave();
+    });
+  });
+
+  function updateInventorySummary(){
+    let totalHave = 0, totalMissing = 0, complete = 0, chaCount = 0;
+    invItems.forEach(item => {
+      const {target, have, missing, cha} = getItemData(item);
+      totalHave += Math.min(have, target);
+      totalMissing += missing;
+      if(missing === 0) complete++;
+      if(cha) chaCount++;
+      item.classList.toggle('complete', missing === 0);
+      item.classList.toggle('cha-flag', cha && missing > 0);
+    });
+    document.getElementById('stat-have').textContent = totalHave;
+    document.getElementById('stat-missing').textContent = totalMissing;
+    document.getElementById('stat-complete').textContent = complete + '/' + invItems.length;
+    document.getElementById('stat-cha').textContent = chaCount;
+    renderShoppingList();
+  }
+
+  function renderShoppingList(){
+    const container = document.getElementById('shopping-list-content');
+    const categories = {};
+    invItems.forEach(item => {
+      const {missing, cha} = getItemData(item);
+      if(missing === 0) return;
+      const groupEl = item.closest('.group');
+      const cat = groupEl ? groupEl.querySelector('h2').textContent : 'Outros';
+      const label = item.querySelector('.inv-label').textContent;
+      const qtyText = missing === 1 ? 'falta 1' : 'faltam ' + missing;
+      if(!categories[cat]) categories[cat] = {falta:[], cha:[]};
+      if(cha) categories[cat].cha.push(label + ' — ' + qtyText);
+      else categories[cat].falta.push(label + ' — ' + qtyText);
+    });
+
+    let html = '';
+    let totalFalta = 0, totalCha = 0;
+    Object.keys(categories).forEach(cat => {
+      const {falta, cha} = categories[cat];
+      if(falta.length === 0 && cha.length === 0) return;
+      html += '<div class="group"><h2>' + cat + '</h2>';
+      if(falta.length){
+        html += '<p class="sub">Falta comprar</p><ul class="plain-list">' + falta.map(i => '<li>' + i + '</li>').join('') + '</ul>';
+        totalFalta += falta.length;
+      }
+      if(cha.length){
+        html += '<p class="sub" style="margin-top:12px;">Aguardando no chá</p><ul class="plain-list cha-list">' + cha.map(i => '<li>' + i + '</li>').join('') + '</ul>';
+        totalCha += cha.length;
+      }
+      html += '</div>';
+    });
+
+    if(totalFalta === 0 && totalCha === 0){
+      html = '<div class="group"><p class="empty-note">Vocês já garantiram todo o enxoval — nada pendente por aqui.</p></div>';
+    }
+
+    container.innerHTML = html;
+  }
+
+  invItems.forEach(item => {
+    const input = item.querySelector('.qty-input');
+    input.addEventListener('input', () => {
+      if(input.value !== '' && parseInt(input.value) < 0) input.value = 0;
+      updateInventorySummary();
+      updateProgress();
+      saveToLocalStorage();
+      scheduleDriveSave();
+    });
+    const chaBtn = item.querySelector('.cha-pill');
+    chaBtn.addEventListener('click', () => {
+      const isActive = chaBtn.classList.toggle('active');
+      chaBtn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      updateInventorySummary();
+      updateProgress();
+      saveToLocalStorage();
+      scheduleDriveSave();
+    });
+  });
+
+  if(!loadFromLocalStorage()){
+    updateInventorySummary();
+    updateProgress();
+  }
+
+  function collectState(){
+    const state = {savedAt: new Date().toISOString(), checkboxes: {}, inventory: {}};
+    checkboxes.forEach(cb => { if(cb.id) state.checkboxes[cb.id] = cb.checked; });
+    invItems.forEach(item => {
+      const {have, cha} = getItemData(item);
+      if(item.id) state.inventory[item.id] = {have, cha};
+    });
+    return state;
+  }
+
+  function applyState(state){
+    if(!state || typeof state !== 'object') throw new Error('Arquivo inválido');
+    Object.entries(state.checkboxes || {}).forEach(([id, checked]) => {
+      const cb = document.getElementById(id);
+      if(cb){
+        cb.checked = !!checked;
+        cb.closest('li').classList.toggle('done', cb.checked);
+      }
+    });
+    Object.entries(state.inventory || {}).forEach(([id, data]) => {
+      const item = document.getElementById(id);
+      if(item){
+        const input = item.querySelector('.qty-input');
+        input.value = Math.max(0, parseInt(data.have) || 0);
+        const chaBtn = item.querySelector('.cha-pill');
+        const isActive = !!data.cha;
+        chaBtn.classList.toggle('active', isActive);
+        chaBtn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      }
+    });
+    updateInventorySummary();
+    updateProgress();
+  }
+
+  function showStatus(msg){
+    const el = document.getElementById('save-status');
+    el.textContent = msg;
+  }
+
+  document.getElementById('export-btn').addEventListener('click', () => {
+    const state = collectState();
+    const blob = new Blob([JSON.stringify(state, null, 2)], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const stamp = new Date().toISOString().slice(0,10);
+    a.href = url;
+    a.download = 'enxoval-maria-isabel-' + stamp + '.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    showStatus('Exportado agora. Guardem o arquivo no Google Drive.');
+  });
+
+  document.getElementById('import-btn').addEventListener('click', () => {
+    document.getElementById('import-file').click();
+  });
+
+  document.getElementById('import-file').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try{
+        const state = JSON.parse(reader.result);
+        applyState(state);
+        saveToLocalStorage();
+        scheduleDriveSave();
+        const savedAt = state.savedAt ? new Date(state.savedAt).toLocaleString('pt-BR') : '';
+        showStatus('Dados importados' + (savedAt ? ' (salvos em ' + savedAt + ')' : '') + '.');
+      }catch(err){
+        showStatus('Não consegui ler esse arquivo. Confirmem se é o .json exportado por aqui.');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  document.getElementById('clear-btn').addEventListener('click', () => {
+    const ok = confirm('Isso vai apagar todo o progresso salvo neste navegador (o arquivo HTML em si não é afetado). Os arquivos já exportados continuam guardados normalmente. Confirmam?');
+    if(!ok) return;
+    try{
+      localStorage.removeItem(STORAGE_KEY);
+    }catch(err){}
+    location.reload();
+  });
+
+  document.getElementById('drive-save-clientid-btn').addEventListener('click', () => {
+    const input = document.getElementById('drive-client-id-input');
+    const value = input.value.trim();
+    if(!value){
+      showStatus('Colem o Client ID antes de salvar.');
+      return;
+    }
+    try{
+      localStorage.setItem(DRIVE_CLIENT_ID_KEY, value);
+    }catch(err){}
+    initDriveUI();
+  });
+
+  document.getElementById('drive-connect-btn').addEventListener('click', () => {
+    if(!tokenClient){
+      setDriveStatus('Aguardando a biblioteca do Google carregar, tentem de novo em instantes.');
+      return;
+    }
+    tokenClient.requestAccessToken({});
+  });
+
+  document.getElementById('drive-reset-btn').addEventListener('click', () => {
+    const ok = confirm('Isso desconecta este navegador do Google Drive e apaga o Client ID salvo aqui (os dados no seu Drive não são apagados). Confirmam?');
+    if(!ok) return;
+    try{
+      localStorage.removeItem(DRIVE_CLIENT_ID_KEY);
+    }catch(err){}
+    driveAccessToken = null;
+    driveFileId = null;
+    tokenClient = null;
+    location.reload();
+  });
+
+  document.getElementById('drive-help-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    alert(
+      'Como conseguir o Client ID:\n\n' +
+      '1. Acesse console.cloud.google.com e crie um projeto\n' +
+      '2. Em "APIs e Serviços > Biblioteca", ative a "Google Drive API"\n' +
+      '3. Em "APIs e Serviços > Tela de consentimento OAuth", escolha Externo, preencham os dados básicos e adicionem seu e-mail em "Usuários de teste"\n' +
+      '4. Em "APIs e Serviços > Credenciais", criem um "ID do cliente OAuth" do tipo "Aplicativo da Web"\n' +
+      '5. Em "Origens JavaScript autorizadas", adicionem o endereço do seu site (ex: https://seu-usuario.github.io)\n' +
+      '6. Copiem o Client ID gerado e colem aqui'
+    );
+  });
+
+  initDriveUI();
+</script>
+
+</body>
+</html>
